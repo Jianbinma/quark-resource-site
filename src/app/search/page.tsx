@@ -158,7 +158,12 @@ export default function SearchPage() {
 
                 {!loading && results.length === 0 && query && (
                     <div className="text-center py-12 bg-gray-50 rounded-xl border border-dashed border-gray-300">
-                        <p className="text-gray-500 text-lg">未找到相关资源，换个关键词试试？</p>
+                        <p className="text-gray-500 text-lg mb-6">未找到相关资源，可以尝试以下外部搜索引擎：</p>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <a href={`https://alipansou.com/search?k=${encodeURIComponent(query)}`} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-blue-600 hover:bg-gray-50 transition-colors">猫狸盘搜 (阿里/夸克)</a>
+                            <a href={`https://www.yunpangou.com/search?q=${encodeURIComponent(query)}`} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-blue-600 hover:bg-gray-50 transition-colors">云盘狗</a>
+                            <a href={`https://www.upyunso.com/search?keyword=${encodeURIComponent(query)}`} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-blue-600 hover:bg-gray-50 transition-colors">UP云搜</a>
+                        </div>
                     </div>
                 )}
             </div>
